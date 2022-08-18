@@ -1,0 +1,690 @@
+01. PHP
+
+Materi
+
+Materi php
+Kenapa php? karena
+1. Relatif muda untuk pemula
+2. Menguasai html dan css
+3. Gratis dan open source (php.net/downloads.php)
+4. Dukungan komunitas (google untuk programmer stackocerflow)
+5. Dokumentasi yang lengkap (http://php.net/manual/en/)
+6. Php dibuat khusus untuk web
+7. Kebanyakan website yang dibuat dengan php
+8. Banyak website besar dibuat dengan php
+9. Content manajemen sistem yang menggunakan php (Wordpress, joomla, drupal, moodle)
+10. Framework php (Laravel, CodeIgniter, symfony, yiiframework)
+
+Apa yang akan dipelajari?
+1. Client-side vs server-side scripting
+2. Static vs dynamic website
+3. Persiapan lingkungan pengembang
+4. Sintaks php
+5. Array
+6. Request methoad
+7. Studi kasus websitesederhana
+8. Database
+9. CRUD (Create, Read, Update, Delete)
+10. Login dan registrasi
+11. Session dan cookie
+12. Ajax
+13. Upload file
+14. Laporan
+15. Web hosting
+
+Apa yang harus disiapkan
+1. Code Editor
+2. Web Server
+3. Web browser
+4. Database Server
+
+Sejarah PHP
+PHP/FI 1994
+PHP v.1 1995 PHP v.2 1997 PHP v.3 1998 PHP v.4 2000 
+PHP v.5 2005
+PDO(PHP Data Object), OOP
+2008 PHP 4 berhenti dikembangkan
+PHP 6 ditunda dan akhirnya diabaikan
+PHP v.5.4 2010
+PHP 7 2014
+
+Karakteristik bahasa php
+1. ekstensi file .phhp
+2. ditulis didalam tag php <?php ?>
+3. bisa digunakan bersamaan dengan HTMl
+4. mengikuti bahasa C
+
+Lingkungan Pengembangan
+client-side vs server-side scripting
+
+a. client side scripting
+HTML, CSS, Javascript (Web browser)
+b. server side scripting
+web browser(HTML dll) - web server(Apache) - PHP - Database (MySQL) query bersifat dinamis
+
+Install 
+a. apache 
+http://httpd.apache.org/download.cgi
+b. php
+http://www.php.net/downloads.php
+c. MySQL
+https://dev.mysql.com/downloads/
+d. all-in-one packages
+WAMP, MAMP, LAMP, XAMPP (Cross platform semua SO)
+download xampp
+# php tidak bisa dicontek hanya html
+localhost/namafolder
+sintak sederhana php 
+<?php 
+    echo "Hello World!";
+?>
+
+Pertemuan 1 
+----------------------------------------------------------------------------------
+Menampilkan output php
+<?php
+echo "Hello World";
+?>
+
+Pertemuan 2 
+----------------------------------------------------------------------------------
+Sintak PHP
+Standar Output (perintah php untuk mencetak sesuatu ke layar)
+1. echo, print (mencetak tulisan, isi variabel string)
+2. print_r (mencetak array)
+3. var_dump (melihat isi dari variabel atau untuk debuging) akan memberikan informasi yang ditampilkan itu type data apa dan ukuran nya berapa. print_r dan var_dump untuk tahap development
+
+echo "Ica Natasya";
+echo 123;
+// true boolean itu 1, boolean false itu kosong
+echo true;
+echo false;
+// tutup echo boleh kutip ' atau " php kutip " lebih sakti dari pada kutip '
+print_r("Ica Natasya");
+var_dump("Ica Natasya");
+
+// Penulisan Sintaks PHP
+1. PHP didalam HTML
+<h1>Halo, Selamat Datang <?php echo "Ica Natasya"; ?></h1>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Belajar PHP</title>
+</head>
+<body>
+    <h1>Halo, Selamat Datang <?php echo "Ica Natasya"; ?></h1>
+    <p><?php echo "Ini adalah paragraf"?></p>
+</body>
+</html>
+
+2. HTML didalam PHP
+<?php 
+    echo "<h1>Halo, Selama Datang Ica Natasya</h1>"
+    ?>
+
+// Variabel dan tipe data
+Variabel untuk menampung sebuah nilai, variabel diphp tidak perlu, mendefinisikan tipe data untuk sebuah nilai untuk ditampung ke variabel, tidak boleh diawali dengan angka, tapi boleh mengandung angka
+// interpolasi untuk mengecek ada variabel atau tidak didalam kutip dua "
+$nama = "Ica ";
+echo "Halo, nama saya $nama";
+
+// Operator
+1. aritmatika + - * / %
+echo 1 + 1;
+$x = 5;
+$y = 4;
+echo $x * $y;
+
+// penggabung string / concat
+$nama_depan = "Ica";
+$nama_belakang = "Natasya";
+echo $nama_depan . " " . $nama_belakang;
+
+2. Assigment (operator penugasan) =, +=, -=, *=, /+, %=, .=
+$x = 1;
+$x += 5;
+echo $x;
+
+$nama = "Ica"; 
+$nama .= " ";
+$nama .= "Natasya";
+echo $nama;
+
+3. Perbandingan mengecek nilai bukan type data <, >, <=, >=, ==, !=
+var_dump(1 < "1");
+
+4. identitas untuk mengecek tipe data ====, !==
+var_dump(1 === "1");
+
+5. Logika untuk pengkondisian && (dua2 nya harus bener), ||(or cukup satu yang benar), !
+$x = 10;
+var_dump($x < 20 && $x % 2 == 0);
+
+Pertemuan 3
+----------------------------------------------------------------------------------
+Control FLow (Struktur Kendali)
+bagaimana alur program kita dibaca oleh php (normal dibaca dari atas kebawah dari kiri ke kanan)
+a. Pengulangan (for, while, do.. while, foreach)
+b. Pengkondisian (if.. else, if.. else if.. else, ternary, switch)
+
+// Pengulangan
+1. foreach while
+2. do.. while// foreach : pengulangan khusus array
+3. for (inisialisasi (menentukan variabel awal untuk pengulangan), kondisi terminasi (memberhentikan pengulangan), enkremen atau dekrement(pengulangan maju atau mundur)
+
+Contoh perulangan for
+for( $i = 0; $i < 5; $i++ ) {
+echo "Hello World <br>";
+}
+
+Contoh Perulangan While 
+while (cek dulu kondisi nya ketika kondisi true jalankan bloknya ketika kondisi bernilai false blok tidak akan dijalankan)
+
+$i = 0;
+while( $i < 5 ) {
+     echo "Hello World! <br>";
+$i++;
+ }
+
+Contoh do while 
+do while (lakukan selama kondisi true lalu cek kondisinya ketika kondisi bernilai false blok akan dijalankan satu kali)
+
+$i = 10; 
+ do {
+     echo "Helo World! <br>";
+ $i++;
+ } while ( $i < 5 );
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Latihan1</title>
+    </head>
+    <body>
+
+    <table border="1" cellpadding="10" cellspacing="0">
+        <?php 
+            for ( $i = 1; $i <= 3; $i++ ) {
+                echo"<tr>";
+                for( $j = 1; $j <= 5; $j++ ) {
+                    echo "<td>$i,$j</td>";
+                }
+                echo "</tr>";
+            }
+        ?>
+    </table>
+    </body>
+</html>
+
+Pengkondisian atau percabangan (untuk menentukan apa yg terjadi ketika membuat sebuah pernyataan)
+
+1. if else
+2. if else if else
+3. ternary
+4. switch
+
+Contoh:
+
+<?php
+$x = 20;
+if ($x < 20) {
+    echo "benar";
+} else if( $x == 20 ) {
+    echo "bingo!";
+}
+else {
+    echo "salah";
+}
+?>
+
+Pertemuan 4 
+----------------------------------------------------------------------------------
+Function pada php
+function (potongan kode program yang dibuat untuk mempermudah)
+http://php.net/manual/en/funcref.php
+
+Fungsi :
+1. Date/time
+a. time()
+Contoh :
+UNIX Timestamp / EPOCH time
+    // detik yang sudah berlalu sejak 1 januari 1970
+    echo time();
+    echo date("d M Y", time()-60*60*24*3);
+b. date()
+Contoh :
+Untuk menampilkan tanggal dengan format tertentu
+    echo date("l, d-M-Y");
+c. mktime()
+// membuat sendiri detik
+    mktime(0,0,0,0,0,0)
+    jam, menit, detik, bulan, tanggal, tahun
+    echo date("l",mktime(0,0,0,8,24,2001));
+d. strtotime()
+Contoh :
+    echo date("l", strtotime("25 aug 2001"));
+
+String
+a. strlen() menghitung panjang dari string
+b. strcamp() menggabung sebuah string
+c. explode() untuk memecah sebuah string menjadi array
+d. htmlspecialchars()
+
+Utility (fungsi bantuan)
+a. var_dump() mencetak isu dari variabel, array, objek
+b. isset() untuk mengecek variabel true atau false
+c. empty() mengecek variabel kosong atau ngg
+d. die() untuk memberhentikan program
+e. sleep() untuk memberhentikan sementara
+
+User-defined function
+function itu biasanya mengembalikan nilai.
+
+Contoh Function :
+
+<?php 
+function salam($waktu = "Datang", $nama = "Admin") {
+    return "Selamat $waktu, $nama!";
+}
+
+?>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Latihan Function</title>
+</head>
+
+<body>
+    <h1><?= salam("Pagi", "Ica"); ?></h1>
+</body>
+
+</html>
+
+Pertemuan 5
+----------------------------------------------------------------------------------
+Array
+Array yaitu variabel yang dapat memiliki banyak nilai, elemen pada array boleh memiliki tipe data yang berbeda, array itu pasangan antara key dan value, key adalah index dimulai dari 0.
+
+Cara membuat array ada 2
+1. nilai dalam array itu elemen
+2. " untuk type string, int dan angka tanpa " dan tiap2 elemen array itu ada index mulai dari 0.
+
+// cara lama
+$hari = array("Senin", "Selasa", "Rabu");
+// cara baru
+$bulan = ["Januari", "Februari", "Maret"];
+$arr1 = [123, "tulisan", false];
+
+// Menampilkan array
+1. var_dump() / print_r()
+2. var_dump($hari);
+3. print_r($bulan);
+echo "<br>";
+
+// Menampilkan 1 elemen pada array
+1. echo $arr1[0];
+2. echo $bulan[1];
+echo "<br>";
+
+// Menambahkan elemen baru pada array 
+var_dump($hari);
+$hari[] = "Kamis";
+$hari[] = "Jumat";
+echo "<br>";
+var_dump($hari);
+
+// Pengulangan pada array
+// for / foreach
+Membuat Kotak
+<?php
+$angka = [3,4,15,20,11,77,89,24];
+?>
+<body>
+
+    <div class=" clear"></div>
+
+    <?php foreach( $angka as $a )  { ?>
+    <div class="kotak"><?php echo $a; ?> </div>
+    <?php } ?>
+
+    <div class="clear"></div>
+
+    <?php foreach( $angka as $a ) : ?>
+    <div class="kotak">
+        <?= $a; ?>
+    </div>
+    <?php endforeach;
+    ?></<body>
+
+Membuat Array Lebih dari satu
+
+<?php 
+$mahasiswa = [["Ica Natasya", "2003073", "Teknik Informatika", "ica@gmail.com"], 
+["Ica ", "2003072", "Teknik Informatika", "caca@gmail.com"]];
+?>
+
+<body>
+    <h1>Daftar Mahasiswa</h1>
+    <?php foreach( $mahasiswa as $mhs) : ?>
+    <ul>
+        <li>Nama : <?= $mhs[0]; ?></li>
+        <li>NIM : <?= $mhs[1]; ?></li>
+        <li>Jurusan : <?= $mhs[2]; ?></li>
+        <li>Email : <?= $mhs[3]; ?></li>
+    </ul>
+    <?php endforeach; ?>
+</body>
+
+Pertemuan 6
+----------------------------------------------------------------------------------
+Membuat Kotak Menggunakan Array
+
+<body>
+    <?php 
+    $angka = [
+        [1,2,3],
+        [4,5,6],
+        [7,8,9]
+    ];
+    ?>
+    <?php foreach( $angka as $a ) : ?>
+    <?php foreach( $a as $b ) : ?>
+    <div class="kotak"><?= $b; ?></div>
+    <?php endforeach; ?>
+    <div class="clear"></div>
+    <?php endforeach; ?>
+</body>
+
+Contoh array list beserta gambar
+
+<body>
+    <h1>Daftar Mahasiswa</h1>
+    <?php foreach($mahasiswa as $mhs) : ?>
+    <ul>
+        <li>
+            <img src="images/<?= $mhs["gambar"]; ?>">
+        </li>
+        <li>Nama : <?= $mhs["nama"]; ?></li>
+        <li>NIM : <?= $mhs["nim"]; ?></li>
+        <li>Email : <?= $mhs["email"]; ?></li>
+        <li>Jurusan : <?= $mhs["jurusan"]; ?></li>
+    </ul>
+    <?php endforeach; ?>
+</body>
+
+Pertemuan 7
+----------------------------------------------------------------------------------
+SUPERGLOBALS
+
+// variabel global milik PHP merupakan array associative, harus paham variabel scope (lingkup variabel didalam php)
+apa itu variabel scope
+
+<?php 
+// variabel scope  lingkup variabel
+$x = 10;
+
+function tampilX() {
+    global $x;
+    echo $x;
+}
+
+tampilX();
+?>
+
+- variabel superglobals yaitu variabel yang sudah dimiliki oleh php yang bisa diakses kapanpun dan dimanapun.
+1. $_GET
+2. $_POST
+3. $_REQUEST
+4. $_SESSION
+5. $_COOKIE
+6. $_SERVER
+7. $_ENV
+
+// $_GET, $_POST, $_SESSION, $_COOKIE 
+1. $_GET
+Metode Request GET => metode pengiriman data melalui url dan data bisa ditangkap oleh variabel supeerglobal $_GET 
+
+// isset untuk mengecek apakah variabel sudah pernah dibuat atau belum. Redirect memindahkan user dari sebuah halaman ke halaman lain.
+
+2. $_POST
+Metode Request POST => data dikirim lewat form, harus memiliki form terlebih dahulu, jika form bisa GET dan POST tapi jika url hanya bisa dengan GET
+
+// Kelebihan Menggunakan POST yaitu ketika kita mengirimkan data ke sebuah tempat data tidak keliatan didalam url nya, login jangan menggunakan GET karna username dan password akan keliatan oleh orang lain.
+
+// dalam form ada 2 atribut wajib yang pertama ada action dan methoad
+name akan menjadi key didalam array associative $_POST
+a. GET ada url
+b. POST tidak ada url
+
+Pertemuan 8(9)
+----------------------------------------------------------------------------------
+Database 
+Data => representasi fakta didunia nyata
+contoh nama, judul buku, no ktp, harga, foto, dokumen, vidio, musik
+data saling terkait dan bisa dihubungkan dengan sesuatu
+buku pasti memiliki judul, pengarang, penerbit, dll.
+mahasiswa => nama, email, jurusan, nim, dll.
+
+Menyimpan dan mengelola data
+Masalah yang ditimbulkan ketika mengelola data manual
+a. kapasitas
+b. kecepatan
+c. keamanan
+d. duplikasi, dll.
+
+solusi
+a. skabilitasa
+b. tersedia
+c. aman
+d. permanen
+e. dll
+
+Database? 
+DBMS (Oracle, MySQL, SQL Server, PostgreSQL, MongoDB)
+
+DBMS => software menampung database
+DBMS beberapa yaitu
+a. Relational DBMS (RDBMS)
+b. Hierarchical DBMS
+c. Network DBMS
+d. NoSQL DBMS
+SQL bahasa untuk menginteraksikan DBMS
+
+RDBMS 
+terdapat beberapa tabel dan bisa dihubungkan dengan relasi
+Record (baris)
+field (kolom)
+field apa dan type data apa
+dalam tabel ada konsep primary key
+primary key (sebuah data yang dapat merepresentasikan satu baris record secara unik)
+unik tidak ada data yang sama dalam tabel
+autoincrement menambah nilai satu per satu
+
+Istilah
+a. Field /Column
+b. Row
+c. Key (primary key, Foreign Key)
+d. Auto Increment
+e. Relationship
+f. Normalization
+
+C:\xampp\mysql\bin>mysql -u root -p
+membuat databse dan membuat tabel
+database : phpdasar
+tabel: mahasiswa
+id int primary key auto_increment
+nama string varchar(100)
+nim varchar(10)
+email varchar(100)
+jurusan varchar(100)
+gambar(100)
+
+create database phpdasar;
+use phpdasar;
+show tables;
+describe mahasiswa;
+create table mahasiswa (
+    -> id int primary key auto_increment,
+    -> nama varchar(100),
+    -> nim char(7),
+    -> email varchar(100),
+    -> jurusan(100),
+    -> gambar(100));
+insert into mahasiswa values ('', 'Mana', '2003098', 'mana@gmail.com', 'Teknik Mesin', 'download.jpg');
+select * from mahasiswa;
+select nim from mahasiswa;
+select nama, nim from mahasiswa;
+select * from mahasiswa where nim = '2003073';
+update mahasiswa set jurusan = 'Teknik Industri' where id = 2;
+delete from mahasiswa where id =2;
+drop table mahasiswa;
+drop database phpdasar;
+
+PHP Mysql 
+cara menghubungkan
+a. ekstensi mysql
+b. ekstensi mysqli
+c. PDO (PHP Data Object)
+
+// koneksi ke database
+$conn = mysqli_connect("localhost", "root", "", "phpdasar");
+// ambil data dari mahasiswa / query data mahasiswa
+$result = mysqli_query($conn, "SELECT * FROM mahasiswa");
+
+// cara cek error
+// if( !$result) {
+//     echo mysqli_error($conn);
+// }
+
+// ambil data (fetch) mahasiswa dari object result
+a. mysqli_fetch_row() mengembalikan nilai numerik(indexnya angka)
+b. mysqli_fetch_assoc() mengembalikan nilai associative
+c. mysqli_array() mengembalikan keduanya yaitu row dan assoc
+d. mysqli_fetch_object()
+
+Buat CRUD ada di pertemuan 10-13
+----------------------------------------------------------------------------------
+Pertemuan 14 
+----------------------------------------------------------------------------------
+Registrasi
+
+// enkripsi password
+    $password = password_hash($password, PASSWORD_DEFAULT);
+
+// tambahkan userbaru ke database
+    mysqli_query($conn, "INSERT INTO user VALUES('', '$username', '$password')");
+
+    return mysqli_affected_rows($conn); 
+
+Pertemuan 15
+----------------------------------------------------------------------------------
+Login
+
+Tidak membuat function baru hanya membuat beberapa kode pengecekan
+
+// cek apakah tombol submit sudah ditekan atau belum
+if( isset($_POST["login"])) {
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+   $result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
+
+   // cek username
+   if( mysqli_num_rows($result) === 1) {
+       // cek Password
+       $row = mysqli_fetch_assoc($result);
+      if( password_verify($password, $row["password"])) {
+           header("Location: index.php");
+           exit;
+       }
+   }
+
+   $error = true;
+}
+?>
+
+Pertemuan 16
+----------------------------------------------------------------------------------
+Logout
+
+session_start();
+$_SESSION = [];
+session_unset();
+session_destroy();
+
+header("Location: login.php");
+exit;
+
+Pertemuan 17
+----------------------------------------------------------------------------------
+Cookie
+
+Cookie?
+informasi disimpan di browser / client
+crud cookie
+penggunaan:
+a. mengenali user
+b. shooping cart (keranjang belanja)
+c. personalisasi (mengetahui prilaku dari user)
+$_COOKIE
+setcookie();
+
+Cookie berada di Lohin dan Logout
+
+Logout
+setcookie('id', '', time() -3600);
+setcookie('key', '', time() -3600);
+
+Login
+// cek cookie
+if( isset($_COOKIE['id']) && isset($_COOKIE['key'])) {
+   $id = $_COOKIE['id'];
+   $key = $_COOKIE['key'];
+
+   // ambil username berdasarkan index
+   $result = mysqli_query($conn, "SELECT username FROM user WHERE id = $id");
+   $row = mysqli_fetch_assoc($result);
+
+   // cek cookie dan Username
+   if( $key === hash('sha256', $row['username'])) {
+       $_SESSION['login'] = true;
+   } 
+}
+
+// cek remember me
+          if( isset($_POST['remember'] )){
+              // buat cookie
+              
+              setcookie('id', $row['id'], time() + 60);
+              setcookie('key', hash('sha256', $row['username']), time()+60);
+          }
+
+Pertemuan 18
+----------------------------------------------------------------------------------
+Pagnation
+Pagnation berada di index.
+
+// pagination
+// konfigurasi, round, floor, ceil untuk membulatkan
+$jumlahDataPerHalaman = 3;
+$jumlahData = count(query("SELECT * FROM mahasiswa"));
+$jumlahHalaman = ceil($jumlahData / $jumlahDataPerHalaman);
+$halamanAktif = ( isset($_GET["halaman"])) ? $_GET["halaman"] : 1;
+// halaman  2, awalData = 2
+// halaman = 3, awalData = 4
+$awalData = ( $jumlahDataPerHalaman * $halamanAktif) - $jumlahDataPerHalaman;
+
+
+$mahasiswa = query("SELECT * FROM mahasiswa LIMIT $awalData, $jumlahDataPerHalaman");
+
+Pertemuan 19
+----------------------------------------------------------------------------------
+Ajax
+
+Pertemuan 20
+----------------------------------------------------------------------------------
+Jquery
