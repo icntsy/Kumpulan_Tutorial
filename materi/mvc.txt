@@ -1,0 +1,117 @@
+Pertemuan 1
+----------------------------------------------------------------------------------
+MVC 
+Yaitu Pola arsitektur pada perancangan perangkat lunak berorientasi objek, tujuan untuk memisahkan antara tampilan, data dan proses.
+program tanpa MVC tampilan, sql, proses dalam satu file (procedural)
+
+MVC terbagi menjadi 3 komponen utama
+a. controller (proses) -> perantara antar model dan view, menangani pemrosesan pada apk, menangani aksi dari user
+b. model (data) -> representasi pengetahuan, mengelola data, logika bisnis
+c. view (tampilan) -> output apa yang dilihat oleh useer, representasi visual dari model, lapisan presentasi
+kenapa mvc?
+karena organisasidan struktur kode, pemisahan logic dan tampilan, perawatan kode, implementasi konsep OOP yang sudah dipelajari, digunakan oleh banyak web application framework.
+
+Bahasa		Framework
+PHP		CodeIgniter, Laravel, Yii, dll
+Java		Sping MVC, JSF, Struts, dll
+Python		Django, CherryPy, dll
+Ruby		Ruby on Rails, Sinatra, dll
+Javascript	Angular JS, React, backbone.js, dll
+
+Apa yang akan kita buat dalam seri ini?
+
+Pertemuan 2
+----------------------------------------------------------------------------------
+Persiapan MVC 
+
+Membuat Struktur folder dan file mvc
+
+Pertemuan 3
+----------------------------------------------------------------------------------
+Routing
+
+Controler untukurl
+
+blok akses folder app
+.htaccess untuk menulis ulang url
+
+Pertemuan 4
+----------------------------------------------------------------------------------
+Controller
+
+Pertemuan 5
+----------------------------------------------------------------------------------
+View
+
+Membuat header, footer terpisah
+
+Pertemuan 6
+----------------------------------------------------------------------------------
+Assets
+
+Simpan CSS dibagian header dan JS di bagian footer
+cara membuat konstanta dengan define dan huruf kapital
+
+
+Pertemuan 7
+----------------------------------------------------------------------------------
+Model
+
+Cara membuat Model:
+1. membuat model di controllers
+2. membuat model di folder models
+3. membuat model di core-controller
+
+mengelola model dengan Database
+
+Pertemuan 8
+----------------------------------------------------------------------------------
+Database Wrapper
+Database.php
+
+Cara membuat MVC
+1. Tampilan header
+2. Tampilan view
+3. Tampilan Controller
+4. Tampilan Model
+
+
+Pertemuan 9
+----------------------------------------------------------------------------------
+INSERT DATA
+
+menggunakan modal
+modal kasih dibawah
+
+membuat insert:
+1. buat modal di view mahasiswa
+2. controller
+3. model method baru
+4. database wraper
+
+Pertemuan 10
+----------------------------------------------------------------------------------
+FLASH MESSAGE
+
+1. tambahkan file baru di folder core
+2. file init
+3. jalankan session
+4. index diluar
+5. ke halaman mahasiswa
+6. set ke controller
+
+Pertemuan 11
+----------------------------------------------------------------------------------
+DELETE
+
+1. Buka view index nya mahasiswa.
+2. membuat methoad di controller
+3. membuat model di mahasiswa
+
+Pertemuan 12
+----------------------------------------------------------------------------------
+UPDATE dengan AJAX
+1. View mahasiswa
+2. buat file js di folder js
+3. tambahkan di footer
+4. tambah class di index ubah
