@@ -1,0 +1,136 @@
+Pertemuan 1 (Download Template)
+------------------------------------------------------
+find yang sebelum dirubah
+reprace update
+adminlte.io 
+
+Pertemuan 2 (Membuat File Koneksi Database)
+------------------------------------------------------
+Buat Database, membuat folder conf dan file config.php
+
+Peretemuan 3 (Autentikasi Login ke Database)
+------------------------------------------------------
+membuat file autentikasi.php di folder conf
+merubah form pada index.php, menambahkan name pada form username dan password
+
+Pertemuan 4 (Switch Alert)
+------------------------------------------------------
+Tambahkan logic pada index.php dibahawah </head>
+ambil alert dari template modals.php
+tambahin sciprt di bagaian bawah dan autentikasi
+
+Peretemuan 5 (Menyederhanakan penulisan)
+------------------------------------------------------
+pisahkan content_header, dashboard, logo, preloader, header, navbar, sidebar, footer, jangan lupa <?php include('footer.php'); ?>
+
+Pertemuan 6 (Data Tables)
+------------------------------------------------------
+copy data tables.html ke app, ganti index main dengan include data_mahasiswa.php
+
+copy css data mahasiswa ke header.php 
+copy javascript data mahasisswa ke footer.php
+copy script function data table ke footer.php
+hapus dari line 830 sampai keatas
+hapus line 914 sampai kebawah
+hapus content header
+hapus content wrapper
+
+direktori css dan sciprt data tables langsung ke direktori plugins
+
+pilih salah satu table saja
+koneksikan jquery data table ke database, caranya :
+1. mengincludekan file koneksi ke file index.php
+<?php include('../conf/config.php'); ?>
+
+hapus data sisa kan 1 data untuk template
+buat table baru pada database
+buat query pada data.php
+
+Pertemuan 7 (Membuat Session User)
+------------------------------------------------------
+masuk ke autentikasi.php buat session
+pergi ke sidebar buat session
+pergi ke index tambahkan session
+tambahkan column level pada tabel users
+
+Peretemuan 8 (Hak Akses Menu User)
+------------------------------------------------------
+
+pindahkan menu sidebar buat folder baru menu dan buat file superadmin.php 
+include sidebar dengan superadmin.php
+tambahkan operator.php
+atur halaman operator
+tambahkan if pada sidebar
+modifikasi halaman operator
+rubah link href pada operator
+tambahkan if else pada halaman index
+
+Pertemuan 9 (Destroy Session)
+------------------------------------------------------
+
+buat tombol logout di operator
+buat file logout.php
+tambahkan logic di file index.php
+
+Pertemuan 10 (Insert Data)
+------------------------------------------------------
+buat tombol tambah data pada data_mahasiswa
+tambah alert modal di data_mahasiswa.php 
+tambah method dan action pada form
+
+buat folder add/tambah_data_mahasiswa.php
+inputGroupSelect01
+
+Pertemuan 11 (Delete Data)
+------------------------------------------------------
+buat tombol hapus pada file data_mahasiswa.php
+buat folder delete/hapus_data_mahasiswa.php
+
+tambahkan alert hapus (sweetalert2)
+buat teks script
+komen sparkline js dan dashboard.js
+
+Pertemuan 12 (Edit Data)
+------------------------------------------------------
+buat tombol edit data
+if pada index
+buat folder dan file baru edit
+
+buat folder baru dengan nama update dengan nama file update_data_mahasiswa.php
+
+Pertemuan 13 (Upload Image)
+------------------------------------------------------
+
+<div class="col-sm-6">
+<label class="form-label" for="customFile">Default></label>
+<input type="file" class="form-control" id="customFile" />
+<div>
+
+tambah column pada edit mahasiswa
+tambahkan enctype pada tag form
+enctype="multipart/form-data-mahasiswa">
+
+tambahkan di update mahasiswa
+buat folder baru berenama foto
+tambahkan column pada database yaitu foto
+
+15.50
+
+Pertemuan 14 (Javascript Regular)
+------------------------------------------------------
+Buat tombol detail pada data mahasiswa.php
+
+tambahkan jquery pada footer.php dibagian bawah
+
+tambahkan modal detail pada data mahasiswa.php
+
+Pertemuan 15 (AJAX)
+------------------------------------------------------
+Hapus javascript regular pada file footer.php
+lalu tambahkan script ajax nya. dan url
+buat folder dan file baru dengan nama detail-data-mahasiswa.php
+
+
+
+
+
